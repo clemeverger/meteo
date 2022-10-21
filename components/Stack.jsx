@@ -9,7 +9,10 @@ const stack = createStackNavigator();
 const Stack = () => {
     return (
         <stack.Navigator >
-            <stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+            <stack.Screen name="Météo" component={Home} options={{
+                headerShown: false,
+                headerTitle: 'Retour'
+            }} />
             <stack.Screen name="HourlyConditions" component={HourlyConditions} options={{
                 headerStyle: {
                     backgroundColor: theme.colors.secondary,
@@ -17,10 +20,11 @@ const Stack = () => {
                 headerTitleStyle: {
                     color: theme.colors.base
                 },
-                headerBackTitleStyle:{
+                headerBackTitleStyle: {
                     color: theme.colors.base
                 },
-                headerTintColor: theme.colors.base
+                headerTintColor: theme.colors.base,
+                headerTitle: ''
             }} />
         </stack.Navigator>
     )
