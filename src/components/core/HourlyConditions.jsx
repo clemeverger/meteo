@@ -17,7 +17,7 @@ const HourlyConditions = ({ route }) => {
             {
                 isLoading &&
                 <View style={styles.wrapper}>
-                    <Text>Loading</Text>
+                    <CustomText>Loading</CustomText>
                 </View>
             }
             {

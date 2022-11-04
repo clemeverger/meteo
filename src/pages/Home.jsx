@@ -15,7 +15,7 @@ const Home = ({ navigation }) => {
             {
                 isLoading &&
                 <View style={styles.wrapper}>
-                    <Text>Loading</Text>
+                    <CustomText>Loading</CustomText>
                 </View>
             }
             {
