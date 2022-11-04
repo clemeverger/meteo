@@ -1,21 +1,27 @@
 import React from 'react'
-import { useQuery } from '@tanstack/react-query';
 import { Text, View, StyleSheet } from 'react-native';
-import { getData } from '../apis/mathis';
+import CurrentConditions from '../components/core/CurrentConditions';
+import Next5DaysConditions from '../components/core/Next5DaysConditions';
+import CustomText from '../components/CustomText';
+import useMeteo from '../hooks/useMeteo';
 import theme from '../utilities/theme';
-import CurrentConditions from '../components/CurrentConditions';
-import Next5DaysConditions from '../components/Next5DaysConditions';
-import { createStackNavigator } from '@react-navigation/stack';
-
-const Stack = createStackNavigator();
 
 const Home = ({ navigation }) => {
-    const { isLoading, data } = useQuery(['events'], () => getData('Nantes'));
+    const [isLoading, data, isError] = useMeteo();
+
     return (
         <View style={styles.container}>
             {
                 isLoading &&
-                <Text>Loading</Text>
+                <View style={styles.wrapper}>
+                    <Text>Loading</Text>
+                </View>
+            }
+            {
+                isError &&
+                <View style={styles.wrapper}>
+                    <CustomText>Error</CustomText>
+                </View>
             }
             {
                 data &&
@@ -34,5 +40,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.primary
+    },
+    wrapper: {
+        flex: 1,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 });

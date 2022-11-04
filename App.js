@@ -2,10 +2,10 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
-import Credit from './pages/Credit'
-import theme from './utilities/theme';
-import Stack from './components/Stack';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import Credit from './src/pages/Credit'
+import theme from './src/utilities/theme';
+import Stack from './src/components/Stack';
 
 const Tab = createBottomTabNavigator();
 const queryClient = new QueryClient();

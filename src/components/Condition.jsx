@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React from 'react'
 import { View, StyleSheet, Image } from 'react-native'
 import CustomText from './CustomText';
 
@@ -8,7 +8,6 @@ const Condition = ({ uri, condition }) => {
             <Image source={{ uri: uri }} style={styles.icon}></Image>
             <CustomText>{condition}</CustomText>
         </View>
-
     )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Image, StyleSheet, SafeAreaView } from 'react-native'
-import theme from '../utilities/theme';
-import CustomText from './CustomText';
+import theme from '../../utilities/theme';
+import CustomText from '../CustomText';
 
 const CurrentConditions = ({ data }) => {
     return (
