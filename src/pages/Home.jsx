@@ -1,14 +1,15 @@
 import React from 'react'
 import { Text, View, StyleSheet } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import CurrentConditions from '../components/core/CurrentConditions';
 import Next5DaysConditions from '../components/core/Next5DaysConditions';
+import CustomRefreshControl from '../components/CustomRefreshControl';
 import CustomText from '../components/CustomText';
 import useMeteo from '../hooks/useMeteo';
-import theme from '../utilities/theme';
+import theme from '../config/theme';
 
 const Home = ({ navigation }) => {
-    const [isLoading, data, isError] = useMeteo();
-
+    const [isLoading, isError, data, refetch] = useMeteo();
     return (
         <View style={styles.container}>
             {
@@ -24,10 +25,12 @@ const Home = ({ navigation }) => {
                 </View>
             }
             {
-                data &&
+                data && !isError &&
                 <>
                     <CurrentConditions data={data.currentConditions}></CurrentConditions>
-                    <Next5DaysConditions data={data.next5DaysConditions} navigation={navigation}></Next5DaysConditions>
+                    <ScrollView refreshControl={<CustomRefreshControl refetch={refetch} />}>
+                        <Next5DaysConditions data={data.next5DaysConditions} navigation={navigation}></Next5DaysConditions>
+                    </ScrollView>
                 </>
             }
         </View>

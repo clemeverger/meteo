@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query';
 import { getHourlyConditions, getNext5DaysConditions } from '../apis/meteo';
 
@@ -29,9 +28,7 @@ const useMeteo = (date) => {
     }
   }
 
-  console.log(isError)
-
-  return [isLoading, data, isError]
+  return [isLoading,isError, data, refetch ]
 }
 
 export default useMeteo

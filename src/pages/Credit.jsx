@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native';
 import CustomText from '../components/CustomText';
-import theme from '../utilities/theme';
+import theme from '../config/theme';
 
 const Credit = () => {
     return (

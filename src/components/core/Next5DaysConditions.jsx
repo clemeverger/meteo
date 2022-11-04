@@ -6,7 +6,6 @@ import CustomText from '../CustomText';
 import Condition from '../Condition';
 import Line from '../Line';
 
-
 const Next5DaysConditions = ({ data, navigation }) => {
     return (
         <>

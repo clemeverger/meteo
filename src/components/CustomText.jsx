@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, StyleSheet } from 'react-native'
-import theme from '../utilities/theme';
+import theme from '../config/theme';
 
 const CustomText = ({ children }) => {
     return (
