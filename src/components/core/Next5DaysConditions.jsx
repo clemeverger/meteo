@@ -13,7 +13,7 @@ const Next5DaysConditions = ({ data, navigation }) => {
                 data.map((day) =>
                     <TouchableOpacity key={day.date} onPress={() => navigation.navigate('HourlyConditions', { date: day.date })}>
                         <Line>
-                            <CustomText>{getDay(day.date)}</CustomText>
+                            <CustomText fw={bold}>{getDay(day.date)}</CustomText>
                             <Condition uri={day.icon} condition={day.condition} />
                             <MinMaxTemperature min={day.temperature.min} max={day.temperature.max} unit={day.temperature.unit}></MinMaxTemperature>
                         </Line>
@@ -23,5 +23,7 @@ const Next5DaysConditions = ({ data, navigation }) => {
         </>
     )
 }
+
+let bold = theme.fontWeight.bold;
 
 export default Next5DaysConditions

@@ -1,19 +1,19 @@
 export const getDay = (date) => {
     switch (new Date(date).getDay()) {
         case 0:
-            return "Lundi";
+            return "Lun.";
         case 1:
-            return "Mardi";
+            return "Mar.";
         case 2:
-            return "Mercredi";
+            return "Mer.";
         case 3:
-            return "Jeudi";
+            return "Jeu.";
         case 4:
-            return "Vendredi";
+            return "Vend.";
         case 5:
-            return "Samedi";
+            return "Sam.";
         case 6:
-            return "Dimanche";
+            return "Dim.";
     }
 }
 

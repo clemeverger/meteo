@@ -9,35 +9,40 @@ const CurrentConditions = ({ data }) => {
             <View style={styles.main}>
                 <Image source={{ uri: data.iconBig }} style={{ width: 100, aspectRatio: 1 / 1 }} />
                 <View>
-                    <CustomText>Actuellement</CustomText>
-                    <CustomText>{data.temperature.value}{data.temperature.unit}</CustomText>
+                    <CustomText fw={light} mb={5}>Actuellement</CustomText>
+                    <CustomText fs={lg} fw={bold}>{data.temperature.value}{data.temperature.unit}</CustomText>
                 </View>
             </View>
             <View style={styles.details}>
                 <View style={styles.wrapper}>
                     <Image source={require('../../assets/wind.png')} style={styles.icon}></Image>
-                    <CustomText>{data.windSpeed.value}{data.windSpeed.unit}</CustomText>
-                    <CustomText>Vent</CustomText>
+                    <CustomText fw={bold} m={5}>{data.windSpeed.value}{data.windSpeed.unit}</CustomText>
+                    <CustomText fw={light} fs={xs}>Vent</CustomText>
                 </View>
                 <View style={styles.wrapper}>
                     <Image source={require('../../assets/humidity.png')} style={styles.icon}></Image>
-                    <CustomText>{data.humidity.value}{data.humidity.unit}</CustomText>
-                    <CustomText>Humidité</CustomText>
+                    <CustomText fw={bold} m={5}>{data.humidity.value}{data.humidity.unit}</CustomText>
+                    <CustomText fw={light} fs={xs}>Humidité</CustomText>
                 </View>
                 <View style={styles.wrapper}>
                     <Image source={require('../../assets/rain.png')} style={styles.icon}></Image>
-                    <CustomText>XX</CustomText>
-                    <CustomText>Pluie</CustomText>
+                    <CustomText fw={bold} m={5}>XX</CustomText>
+                    <CustomText fw={light} fs={xs}>Pluie</CustomText>
                 </View>
                 <View style={styles.wrapper}>
                     <Image source={require('../../assets/sun.png')} style={styles.icon}></Image>
-                    <CustomText>XX</CustomText>
-                    <CustomText>UV</CustomText>
+                    <CustomText fw={bold} m={5}>XX</CustomText>
+                    <CustomText fw={light} fs={xs}>UV</CustomText>
                 </View>
             </View>
         </SafeAreaView>
     )
 }
+
+let xs = theme.fontSize.xs;
+let lg = theme.fontSize.lg;
+let light = theme.fontWeight.light;
+let bold = theme.fontWeight.bold;
 
 const styles = StyleSheet.create({
     container: {
@@ -60,8 +65,8 @@ const styles = StyleSheet.create({
         marginBottom: 25
     },
     icon: {
-        width: 20,
-        height: 20,
+        width: 15,
+        height: 15,
         resizeMode: 'contain'
     },
     wrapper: {

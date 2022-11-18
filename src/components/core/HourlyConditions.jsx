@@ -1,4 +1,4 @@
-import { View, StyleSheet, RefreshControl } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { getHourly } from '../../utilities';
 import useMeteo from '../../hooks/useMeteo';
@@ -43,8 +43,6 @@ const HourlyConditions = ({ route }) => {
     )
 }
 
-export default HourlyConditions
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -57,3 +55,5 @@ const styles = StyleSheet.create({
         paddingTop: 20
     },
 });
+
+export default HourlyConditions
