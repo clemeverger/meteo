@@ -7,7 +7,6 @@ const CustomRefreshControl = ({ refetch }) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
     }
     const [refreshing, setRefreshing] = useState();
-
     const onRefresh = useCallback(() => {
         setRefreshing(true);
         wait(2000).then(() => {
@@ -17,11 +16,13 @@ const CustomRefreshControl = ({ refetch }) => {
     }, []);
 
     return (
-        <RefreshControl
-            refreshing={refreshing}
-            onRefresh={onRefresh}
-            tintColor={theme.colors.base}
-        />
+        <>
+            <RefreshControl
+                refreshing={refreshing}
+                onRefresh={onRefresh}
+                tintColor={theme.colors.base}
+            />
+        </>
     )
 }
 

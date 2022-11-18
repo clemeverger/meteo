@@ -15,7 +15,7 @@ const useMeteo = (date) => {
   }
   else {
     isLoading = getHourlyConditionsQuery.isLoading;
-    isError = getHourlyConditionsQuery.isError;
+    isError = true;
     data = getHourlyConditionsQuery.data;
   }
 
@@ -28,7 +28,7 @@ const useMeteo = (date) => {
     }
   }
 
-  return [isLoading,isError, data, refetch ]
+  return { isLoading, isError, data, refetch }
 }
 
 export default useMeteo

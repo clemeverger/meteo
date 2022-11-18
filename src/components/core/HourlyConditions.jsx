@@ -1,5 +1,4 @@
-import React, { useCallback, useState } from 'react'
-import { View, StyleSheet, Image, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { getHourly } from '../../utilities';
 import useMeteo from '../../hooks/useMeteo';
@@ -10,7 +9,7 @@ import Line from '../Line';
 
 const HourlyConditions = ({ route }) => {
     const { date } = route.params;
-    const [isLoading, isError, data, refetch] = useMeteo(date);
+    const { isLoading, isError, data, refetch } = useMeteo(date);
 
     return (
         <ScrollView style={styles.container} refreshControl={<CustomRefreshControl refetch={refetch} />} >
@@ -47,12 +46,12 @@ export default HourlyConditions
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: theme.colors.primary
+        backgroundColor: theme.colors.primary,
     },
     wrapper: {
         flex: 1,
         display: 'flex',
-        justifyContent: 'center',
         alignItems: 'center',
+        paddingTop: 20
     },
 });
