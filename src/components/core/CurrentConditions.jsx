@@ -14,19 +14,23 @@ const CurrentConditions = ({ data }) => {
                 </View>
             </View>
             <View style={styles.details}>
-                <View>
+                <View style={styles.wrapper}>
+                    <Image source={require('../../assets/wind.png')} style={styles.icon}></Image>
                     <CustomText>{data.windSpeed.value}{data.windSpeed.unit}</CustomText>
                     <CustomText>Vent</CustomText>
                 </View>
-                <View>
+                <View style={styles.wrapper}>
+                    <Image source={require('../../assets/humidity.png')} style={styles.icon}></Image>
                     <CustomText>{data.humidity.value}{data.humidity.unit}</CustomText>
                     <CustomText>Humidité</CustomText>
                 </View>
-                <View>
+                <View style={styles.wrapper}>
+                    <Image source={require('../../assets/rain.png')} style={styles.icon}></Image>
                     <CustomText>XX</CustomText>
                     <CustomText>Pluie</CustomText>
                 </View>
-                <View>
+                <View style={styles.wrapper}>
+                    <Image source={require('../../assets/sun.png')} style={styles.icon}></Image>
                     <CustomText>XX</CustomText>
                     <CustomText>UV</CustomText>
                 </View>
@@ -55,6 +59,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 25
     },
+    icon: {
+        width: 20,
+        height: 20,
+        resizeMode: 'contain'
+    },
+    wrapper: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
 });
 
 export default CurrentConditions

@@ -15,7 +15,7 @@ const useMeteo = (date) => {
   }
   else {
     isLoading = getHourlyConditionsQuery.isLoading;
-    isError = true;
+    isError = getHourlyConditionsQuery.isError;
     data = getHourlyConditionsQuery.data;
   }
 
