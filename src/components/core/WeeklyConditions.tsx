@@ -5,6 +5,7 @@ import MinMaxTemperature from '../MinMaxTemperature';
 import CustomText from '../CustomText';
 import Condition from '../Condition';
 import Line from '../Line';
+import theme from '../../config/theme';
 
 const WeeklyConditions = ({ data, navigation }) => {
     return (

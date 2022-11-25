@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, StyleSheet, Image } from 'react-native'
-import theme from '../config/theme';
 import CustomText from './CustomText';
+import theme from '../config/theme';
 
 const Condition = ({ uri, condition }) => {
     return (

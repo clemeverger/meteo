@@ -1,17 +1,22 @@
 import { useQuery } from '@tanstack/react-query';
-import { getHourlyConditions, getNext5DaysConditions } from '../apis/meteo';
+import { getHourlyConditions, getWeeklyConditions } from '../apis/meteo';
 
-const useMeteo = (date) => {
-  const getNext5DaysConditionsQuery = useQuery(['getNext5DaysConditions'], () => getNext5DaysConditions('Nantes'), { enabled: !date });
+interface IProps {
+  date: null | string
+}
+
+const useMeteo = (date: IProps) => {
+  const getWeeklyConditionsQuery = useQuery(['getWeeklyConditions'], () => getWeeklyConditions('Nantes'), { enabled: !date });
   const getHourlyConditionsQuery = useQuery(['getHourlyConditions', date], () => getHourlyConditions('Nantes', date), { enabled: !!date });
 
   let isLoading;
   let isError;
   let data;
+
   if (!date) {
-    isLoading = getNext5DaysConditionsQuery.isLoading;
-    isError = getNext5DaysConditionsQuery.isError;
-    data = getNext5DaysConditionsQuery.data;
+    isLoading = getWeeklyConditionsQuery.isLoading;
+    isError = getWeeklyConditionsQuery.isError;
+    data = getWeeklyConditionsQuery.data;
   }
   else {
     isLoading = getHourlyConditionsQuery.isLoading;
@@ -21,7 +26,7 @@ const useMeteo = (date) => {
 
   const refetch = () => {
     if (!date) {
-      getNext5DaysConditionsQuery.refetch();
+      getWeeklyConditionsQuery.refetch();
     }
     else {
       getHourlyConditionsQuery.refetch();

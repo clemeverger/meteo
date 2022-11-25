@@ -7,7 +7,7 @@ import theme from '../config/theme';
 const Credit = () => {
     return (
         <View style={styles.container}>
-            <StatusBar style={theme.statusBar.style} backgroundColor={theme.colors.secondary} />
+            <StatusBar style={'light'} backgroundColor={theme.colors.secondary} />
             <CustomText>Application de Clément Verger</CustomText>
         </View>
     )

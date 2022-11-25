@@ -1,11 +1,11 @@
 import React from 'react'
 import { View, Image, StyleSheet, SafeAreaView } from 'react-native'
-import theme from '../../config/theme';
 import CustomText from '../CustomText';
+import theme from '../../config/theme';
 
 const DailyConditions = ({ data }) => {
     return (
-        <SafeAreaView style={styles.container} forceInset={{ bottom: 'never' }}>
+        <SafeAreaView style={styles.container}>
             <View style={styles.main}>
                 <Image source={{ uri: data.iconBig }} style={{ width: 100, aspectRatio: 1 / 1 }} />
                 <View>

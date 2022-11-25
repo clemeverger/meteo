@@ -1,4 +1,4 @@
-export const getNext5DaysConditions = (ville) => fetch(`https://weather-api.mathisbarre.com/${ville}`).then(response => {
+export const getWeeklyConditions = (ville) => fetch(`https://weather-api.mathisbarre.com/${ville}`).then(response => {
     if (!response.ok) {
         throw new Error('Error');
     }
