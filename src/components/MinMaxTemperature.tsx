@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
-import CustomText from './CustomText';
-import theme from '../config/theme';
+import CustomText from './CustomText'
+import theme from '../config/theme'
 
 const MinMaxTemperature = ({ min, max, unit }) => {
     return (
@@ -12,7 +12,7 @@ const MinMaxTemperature = ({ min, max, unit }) => {
     )
 }
 
-let xs = theme.fontSize.xs;
-let bold = theme.fontWeight.bold;
+let xs = theme.fontSize.xs
+let bold = theme.fontWeight.bold
 
 export default MinMaxTemperature

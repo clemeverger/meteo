@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Image, StyleSheet, SafeAreaView } from 'react-native'
-import CustomText from '../CustomText';
-import theme from '../../config/theme';
+import CustomText from '../CustomText'
+import theme from '../../config/theme'
 
 const DailyConditions = ({ data }) => {
     return (
@@ -39,10 +39,10 @@ const DailyConditions = ({ data }) => {
     )
 }
 
-let xs = theme.fontSize.xs;
-let lg = theme.fontSize.lg;
-let light = theme.fontWeight.light;
-let bold = theme.fontWeight.bold;
+let xs = theme.fontSize.xs
+let lg = theme.fontSize.lg
+let light = theme.fontWeight.light
+let bold = theme.fontWeight.bold
 
 const styles = StyleSheet.create({
     container: {
@@ -74,6 +74,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     }
-});
+})
 
 export default DailyConditions

@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, StyleSheet, Image } from 'react-native'
-import CustomText from './CustomText';
-import theme from '../config/theme';
+import CustomText from './CustomText'
+import theme from '../config/theme'
 
 const Condition = ({ uri, condition }) => {
     return (
@@ -12,8 +12,8 @@ const Condition = ({ uri, condition }) => {
     )
 }
 
-let xs = theme.fontSize.xs;
-let light = theme.fontWeight.light;
+let xs = theme.fontSize.xs
+let light = theme.fontWeight.light
 
 const styles = StyleSheet.create({
     container: {
@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1,
         marginRight: 5
     },
-});
+})
 
 export default Condition

@@ -1,8 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'expo-status-bar'
 import React from 'react'
-import { View, StyleSheet } from 'react-native';
-import CustomText from './CustomText';
-import theme from '../config/theme';
+import { View, StyleSheet } from 'react-native'
+import CustomText from './CustomText'
+import theme from '../config/theme'
 
 const Credit = () => {
     return (
@@ -22,4 +22,4 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: theme.colors.primary
     },
-});
+})

@@ -1,15 +1,15 @@
 
-import * as React from 'react';
-import { Image, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import * as React from 'react'
+import { Image, StyleSheet } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Credit from './src/components/Credit'
-import theme from './src/config/theme';
-import Stack from './src/components/Stack';
+import theme from './src/config/theme'
+import Stack from './src/components/Stack'
 
-const Tab = createBottomTabNavigator();
-const queryClient = new QueryClient();
+const Tab = createBottomTabNavigator()
+const queryClient = new QueryClient()
 
 const App = () => {
   return (
@@ -35,7 +35,7 @@ const App = () => {
         </Tab.Navigator>
       </NavigationContainer>
     </QueryClientProvider>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -44,6 +44,6 @@ const styles = StyleSheet.create({
     height: 20,
     resizeMode: 'contain'
   },
-});
+})
 
 export default App;

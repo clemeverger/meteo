@@ -18,5 +18,5 @@ export const getDay = (date) => {
 }
 
 export const getHourly = (date) => {
-    return new Date(date).toLocaleTimeString().slice(0, 5);
+    return new Date(date).toLocaleTimeString().slice(0, 5)
 }

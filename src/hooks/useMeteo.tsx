@@ -1,9 +1,5 @@
-import { useQuery } from '@tanstack/react-query';
-import { getHourlyConditions, getWeeklyConditions } from '../apis/meteo';
-
-interface IProps {
-  date: null | string
-}
+import { useQuery } from '@tanstack/react-query'
+import { getHourlyConditions, getWeeklyConditions } from '../apis/meteo'
 
 const useMeteo = (date: IProps) => {
   const getWeeklyConditionsQuery = useQuery(['getWeeklyConditions'], () => getWeeklyConditions('Nantes'), { enabled: !date });

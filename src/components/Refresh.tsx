@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
-import { RefreshControl } from 'react-native';
-import theme from '../config/theme';
+import { RefreshControl } from 'react-native'
+import theme from '../config/theme'
 
 const wait = (timeout) => {
     return new Promise(resolve => setTimeout(resolve, timeout));
@@ -14,7 +14,7 @@ const Refresh = ({ refetch }) => {
         wait(2000).then(() => setRefreshing(false));
     }, []);
 
-    return <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={theme.colors.base} />;
+    return <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={theme.colors.base} />
 }
 
 export default Refresh

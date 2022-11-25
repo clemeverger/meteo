@@ -1,6 +1,6 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native';
-import CustomText from './CustomText';
+import { View, StyleSheet } from 'react-native'
+import CustomText from './CustomText'
 
 const Error = () => {
     return (

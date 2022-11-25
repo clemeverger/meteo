@@ -1,14 +1,14 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-import DailyConditions from './core/DailyConditions';
-import WeeklyConditions from './core/WeeklyConditions';
-import useMeteo from '../hooks/useMeteo';
-import Refresh from './Refresh';
-import { StatusBar } from 'expo-status-bar';
-import theme from '../config/theme';
-import Error from './Error';
-import Loading from './Loading';
+import { View, StyleSheet } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler'
+import DailyConditions from './core/DailyConditions'
+import WeeklyConditions from './core/WeeklyConditions'
+import useMeteo from '../hooks/useMeteo'
+import Refresh from './Refresh'
+import { StatusBar } from 'expo-status-bar'
+import theme from '../config/theme'
+import Error from './Error'
+import Loading from './Loading'
 
 const Home = ({ navigation }) => {
     const { isLoading, isError, data, refetch } = useMeteo(null);
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: theme.colors.primary
     },
-});
+})

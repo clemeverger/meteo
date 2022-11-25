@@ -1,15 +1,15 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-import { getHourly } from '../../utilities/index';
-import useMeteo from '../../hooks/useMeteo';
-import Condition from '../Condition';
+import { View, StyleSheet } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler'
+import { getHourly } from '../../utilities/index'
+import useMeteo from '../../hooks/useMeteo'
+import Condition from '../Condition'
 import CustomText from '../CustomText'
-import Line from '../Line';
-import Refresh from '../Refresh';
-import theme from '../../config/theme';
-import Loading from '../Loading';
-import Error from '../Error';
+import Line from '../Line'
+import Refresh from '../Refresh'
+import theme from '../../config/theme'
+import Loading from '../Loading'
+import Error from '../Error'
 
 const HourlyConditions = ({ route }) => {
     const { date } = route.params;

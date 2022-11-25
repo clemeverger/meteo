@@ -1,6 +1,6 @@
 import React from 'react'
-import { View, StyleSheet, ActivityIndicator } from 'react-native';
-import theme from '../config/theme';
+import { View, StyleSheet, ActivityIndicator } from 'react-native'
+import theme from '../config/theme'
 
 const Loading = () => {
     return (
@@ -18,6 +18,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: theme.colors.primary
     },
-});
+})
 
 export default Loading

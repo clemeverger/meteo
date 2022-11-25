@@ -1,14 +1,6 @@
 import React from 'react'
-import { Text, StyleSheet, StyleProp, TextStyle } from 'react-native'
-import theme from '../config/theme';
-
-interface ICustomText {
-    children?: React.ReactNode,
-    fs?: string,
-    fw?: string,
-    m?: number,
-    mb?: number
-}
+import { Text, StyleSheet } from 'react-native'
+import theme from '../config/theme'
 
 const CustomText = ({ children, fs, fw, m, mb }: ICustomText) => {
     const styles: any = StyleSheet.create({

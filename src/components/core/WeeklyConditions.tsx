@@ -1,11 +1,11 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
-import { getDay } from '../../utilities';
-import MinMaxTemperature from '../MinMaxTemperature';
-import CustomText from '../CustomText';
-import Condition from '../Condition';
-import Line from '../Line';
-import theme from '../../config/theme';
+import { getDay } from '../../utilities'
+import MinMaxTemperature from '../MinMaxTemperature'
+import CustomText from '../CustomText'
+import Condition from '../Condition'
+import Line from '../Line'
+import theme from '../../config/theme'
 
 const WeeklyConditions = ({ data, navigation }) => {
     return (
@@ -25,6 +25,6 @@ const WeeklyConditions = ({ data, navigation }) => {
     )
 }
 
-let bold = theme.fontWeight.bold;
+let bold = theme.fontWeight.bold
 
 export default WeeklyConditions

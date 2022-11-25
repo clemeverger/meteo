@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import theme from '../config/theme';
+import theme from '../config/theme'
 
 const Line = ({children}) => {
     return (
@@ -27,6 +27,6 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: theme.colors.border
     }
-});
+})
 
 export default Line
