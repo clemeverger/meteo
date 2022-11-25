@@ -1,19 +1,20 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import CurrentConditions from '../components/core/CurrentConditions';
-import Next5DaysConditions from '../components/core/Next5DaysConditions';
-import CustomText from '../components/CustomText';
+import DailyConditions from './core/DailyConditions';
+import WeeklyConditions from './core/WeeklyConditions';
+import CustomText from './CustomText';
 import useMeteo from '../hooks/useMeteo';
 import theme from '../config/theme';
-import useRefresh from '../hooks/useRefresh';
+import Refresh from './Refresh';
+import { StatusBar } from 'expo-status-bar';
 
 const Home = ({ navigation }) => {
     const { isLoading, isError, data, refetch } = useMeteo();
-    const refresh = useRefresh(refetch);
 
     return (
         <View style={styles.container}>
+            <StatusBar style={theme.statusBar.style} backgroundColor={theme.colors.secondary} />
             {
                 isLoading &&
                 <View style={styles.wrapper}>
@@ -27,11 +28,11 @@ const Home = ({ navigation }) => {
                 </View>
             }
             {
-                data && !isError &&
+                !isLoading && !isError && data &&
                 <>
-                    <CurrentConditions data={data.currentConditions}></CurrentConditions>
-                    <ScrollView refreshControl={refresh} >
-                        <Next5DaysConditions data={data.next5DaysConditions} navigation={navigation}></Next5DaysConditions>
+                    <DailyConditions data={data.currentConditions}></DailyConditions>
+                    <ScrollView refreshControl={<Refresh refetch={refetch} />} >
+                        <WeeklyConditions data={data.next5DaysConditions} navigation={navigation}></WeeklyConditions>
                     </ScrollView>
                 </>
             }

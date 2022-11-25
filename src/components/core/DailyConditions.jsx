@@ -3,7 +3,7 @@ import { View, Image, StyleSheet, SafeAreaView } from 'react-native'
 import theme from '../../config/theme';
 import CustomText from '../CustomText';
 
-const CurrentConditions = ({ data }) => {
+const DailyConditions = ({ data }) => {
     return (
         <SafeAreaView style={styles.container} forceInset={{ bottom: 'never' }}>
             <View style={styles.main}>
@@ -76,4 +76,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default CurrentConditions
+export default DailyConditions

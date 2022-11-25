@@ -1,20 +1,18 @@
 import { View, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { getHourly } from '../../utilities';
+import { getHourly } from '../../utilities/index';
 import useMeteo from '../../hooks/useMeteo';
 import Condition from '../Condition';
 import CustomText from '../CustomText'
 import Line from '../Line';
-import React from 'react';
-import useRefresh from '../../hooks/useRefresh';
+import Refresh from '../Refresh';
 
 const HourlyConditions = ({ route }) => {
     const { date } = route.params;
     const { isLoading, isError, data, refetch } = useMeteo(date);
-    const refresh = useRefresh(refetch);
 
     return (
-        <ScrollView style={styles.container} refreshControl={refresh} >
+        <ScrollView style={styles.container} refreshControl={<Refresh refetch={refetch} />} >
             {
                 isLoading &&
                 <View style={styles.wrapper}>
@@ -28,7 +26,7 @@ const HourlyConditions = ({ route }) => {
                 </View>
             }
             {
-                data && !isError &&
+                !isLoading && !isError && data &&
                 data.hourly.map((hourly) =>
                     <View key={hourly.datetime}>
                         <Line style={styles.hourly}>

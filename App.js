@@ -4,7 +4,7 @@ import { Image, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import Credit from './src/pages/Credit'
+import Credit from './src/components/Credit'
 import theme from './src/config/theme';
 import Stack from './src/components/Stack';
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from '../pages/Home';
+import Home from './Home';
 import HourlyConditions from './core/HourlyConditions';
-import theme from '../config/theme';
+import theme from '../../config/theme';
 
 const stack = createStackNavigator();
 

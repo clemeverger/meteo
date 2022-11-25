@@ -14,5 +14,8 @@ export default theme = {
         light: '200',
         base: '400',
         bold: '600'
+    },
+    statusBar: {
+        style: 'light'
     }
 }

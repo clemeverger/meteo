@@ -6,7 +6,7 @@ import CustomText from '../CustomText';
 import Condition from '../Condition';
 import Line from '../Line';
 
-const Next5DaysConditions = ({ data, navigation }) => {
+const WeeklyConditions = ({ data, navigation }) => {
     return (
         <>
             {
@@ -26,4 +26,4 @@ const Next5DaysConditions = ({ data, navigation }) => {
 
 let bold = theme.fontWeight.bold;
 
-export default Next5DaysConditions
+export default WeeklyConditions
