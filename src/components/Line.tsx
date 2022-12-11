@@ -1,18 +1,19 @@
-import React from 'react'
-import { View, StyleSheet } from 'react-native'
-import theme from '../config/theme'
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import theme from '../config/theme';
 
-const Line = ({children}) => {
+interface IProps {
+    children?: React.ReactNode;
+}
+
+const Line = ({ children }: IProps): JSX.Element => {
     return (
         <View>
-            <View style={styles.container}>
-                {children}
-            </View>
+            <View style={styles.container}>{children}</View>
             <View style={styles.line} />
         </View>
-
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -25,8 +26,8 @@ const styles = StyleSheet.create({
     line: {
         height: 1,
         width: '100%',
-        backgroundColor: theme.colors.border
-    }
-})
+        backgroundColor: theme.colors.border,
+    },
+});
 
-export default Line
+export default Line;

@@ -1,19 +1,30 @@
-import React from 'react'
-import { View, StyleSheet, Image } from 'react-native'
-import CustomText from './CustomText'
-import theme from '../config/theme'
+import React from 'react';
+import { View, StyleSheet, Image } from 'react-native';
+import CustomText from './CustomText';
+import theme from '../config/theme';
 
-const Condition = ({ uri, condition }) => {
-    return (
-        <View style={styles.container}>
-            <Image source={{ uri: uri }} style={styles.icon}></Image>
-            <CustomText fw={light} fs={xs}>{condition}</CustomText>
-        </View>
-    )
+interface IProps {
+    uri: string;
+    condition: any;
 }
 
-let xs = theme.fontSize.xs
-let light = theme.fontWeight.light
+const Condition = ({ uri, condition }: IProps): JSX.Element => {
+    return (
+        <View style={styles.container}>
+            <Image
+                source={{ uri }}
+                style={styles.icon}></Image>
+            <CustomText
+                fw={light}
+                fs={xs}>
+                {condition}
+            </CustomText>
+        </View>
+    );
+};
+
+const xs = theme.fontSize.xs;
+const light = theme.fontWeight.light;
 
 const styles = StyleSheet.create({
     container: {
@@ -24,8 +35,8 @@ const styles = StyleSheet.create({
     icon: {
         width: 50,
         aspectRatio: 1 / 1,
-        marginRight: 5
+        marginRight: 5,
     },
-})
+});
 
-export default Condition
+export default Condition;

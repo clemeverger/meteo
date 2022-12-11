@@ -1,14 +1,19 @@
-import React from 'react'
-import { View, StyleSheet, ActivityIndicator } from 'react-native'
-import theme from '../config/theme'
+import React from 'react';
+import { View, StyleSheet, ActivityIndicator } from 'react-native';
+import theme from '../config/theme';
 
-const Loading = () => {
+const Loading = (): JSX.Element => {
     return (
         <View style={styles.container}>
-            <ActivityIndicator size="large" color={theme.colors.base} />
+            <ActivityIndicator
+                size='large'
+                color={color}
+            />
         </View>
-    )
-}
+    );
+};
+
+const color = theme.colors.base;
 
 const styles = StyleSheet.create({
     container: {
@@ -16,8 +21,8 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: theme.colors.primary
+        backgroundColor: theme.colors.primary,
     },
-})
+});
 
-export default Loading
+export default Loading;

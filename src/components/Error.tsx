@@ -1,14 +1,14 @@
-import React from 'react'
-import { View, StyleSheet } from 'react-native'
-import CustomText from './CustomText'
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import CustomText from './CustomText';
 
-const Error = () => {
+const Error = (): JSX.Element => {
     return (
         <View style={styles.container}>
             <CustomText>Error</CustomText>
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Error
+export default Error;

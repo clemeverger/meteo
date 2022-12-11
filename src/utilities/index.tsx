@@ -1,22 +1,28 @@
-export const getDay = (date) => {
+export const getDay = (date: string): string => {
     switch (new Date(date).getDay()) {
         case 0:
-            return "Lun.";
+            return 'Lun.';
         case 1:
-            return "Mar.";
+            return 'Mar.';
         case 2:
-            return "Mer.";
+            return 'Mer.';
         case 3:
-            return "Jeu.";
+            return 'Jeu.';
         case 4:
-            return "Vend.";
+            return 'Vend.';
         case 5:
-            return "Sam.";
+            return 'Sam.';
         case 6:
-            return "Dim.";
+            return 'Dim.';
+        default:
+            return 'Error';
     }
-}
+};
 
-export const getHourly = (date) => {
-    return new Date(date).toLocaleTimeString().slice(0, 5)
-}
+export const getHourly = (date: string): string => {
+    return new Date(date).toLocaleTimeString().slice(0, 5);
+};
+
+export const wait = async (timeout: number): Promise<void> => {
+    return await new Promise((resolve) => setTimeout(resolve, timeout));
+};
