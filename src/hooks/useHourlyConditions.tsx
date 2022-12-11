@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const useHourlyConditions = (date: string): IProps => {
-    const getHourlyConditionsQuery = useQuery(['getHourlyConditions', date], () => getHourlyConditions('Nantes', date), { enabled: !!date });
+    const getHourlyConditionsQuery = useQuery(['getHourlyConditions', date], async () => getHourlyConditions('Nantes', date), { enabled: !!date });
 
     const isLoading = getHourlyConditionsQuery.isLoading;
     const isError = getHourlyConditionsQuery.isError;

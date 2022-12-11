@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const useWeeklyConditions = (): IProps => {
-    const getWeeklyConditionsQuery = useQuery(['getWeeklyConditions'], () => getWeeklyConditions('Nantes'), {});
+    const getWeeklyConditionsQuery = useQuery(['getWeeklyConditions'], async () => getWeeklyConditions('Nantes'), {});
 
     const isLoading = getWeeklyConditionsQuery.isLoading;
     const isError = getWeeklyConditionsQuery.isError;
